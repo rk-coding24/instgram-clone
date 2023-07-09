@@ -4,6 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instgram_now_clone/state/auth/backend/authenticator.dart';
 import 'package:instgram_now_clone/state/auth/providers/auth_state_provider.dart';
 import 'package:instgram_now_clone/state/auth/providers/is_logged_in_provider.dart';
+import 'package:instgram_now_clone/state/provider/is_loading_providers.dart';
+import 'package:instgram_now_clone/views/components/constants/loading/loading_screen.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -43,6 +45,16 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Consumer(
         builder: (context, ref, child) {
+          //take care of displaying the loading screen
+          ref.listen(isLoadingProvider, (previous, isLoading) {
+            if (isLoading) {
+              LoadingScreen.instance().show(
+                context: context,
+              );
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
           final isLoggedIn = ref.watch(isLoggedInProvider);
           if (isLoggedIn) {
             return const MainView();
