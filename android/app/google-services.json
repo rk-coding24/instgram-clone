@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "150363950587",
+    "project_id": "instgram-now-clone",
+    "storage_bucket": "instgram-now-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150363950587:android:97c4d6e061eda8fbbccf5e",
+        "android_client_info": {
+          "package_name": "com.simplylife.instgram_now_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150363950587-8ciad7da4a3j79l1uf9cfdtu9ms41mgp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUlNa0HrccrVHc_AppC5B8KnsBLVGx0E0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150363950587-8ciad7da4a3j79l1uf9cfdtu9ms41mgp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
