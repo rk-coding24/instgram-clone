@@ -6,6 +6,7 @@ import 'package:instgram_now_clone/state/auth/providers/is_logged_in_provider.da
 import 'package:instgram_now_clone/state/provider/is_loading_providers.dart';
 import 'package:instgram_now_clone/views/components/constants/loading/loading_screen.dart';
 import 'package:instgram_now_clone/views/login/login_view.dart';
+import 'package:instgram_now_clone/views/main/main_view.dart';
 import 'firebase_options.dart';
 
 import 'dart:developer' as devtools show log;
@@ -61,31 +62,6 @@ class App extends StatelessWidget {
           } else {
             return const LoginView();
           }
-        },
-      ),
-    );
-  }
-}
-
-// for when you are already logged in
-class MainView extends StatelessWidget {
-  const MainView({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main View'),
-      ),
-      body: Consumer(
-        builder: (context, ref, child) {
-          return TextButton(
-            onPressed: () async {
-              ref.read(authStateProvider.notifier).logOut();
-            },
-            child: const Text(
-              'Logout',
-            ),
-          );
         },
       ),
     );
